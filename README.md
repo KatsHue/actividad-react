@@ -21,7 +21,7 @@ Incluye una lista de meditaciones guiadas, un temporizador circular y un fondo a
 ### Clona el repositorio
 
 ```sh
-git clone https://github.com/tu-usuario/satori-app.git
+git clone https://github.com/KatsHue/actividad-react.git
 ```
 
 ### Entra a la carpeta del proyecto
