@@ -36,7 +36,7 @@ function MeditationPlayer({ meditation, onBack }) {
   };
 
   return (
-    <motion.div /* ← AQUÍ USA motion */
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -45,7 +45,7 @@ function MeditationPlayer({ meditation, onBack }) {
       <BreathingAnimation isPlaying={isPlaying} />
 
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-8">
-        <motion.h2 /* ← AQUÍ USA motion */
+        <motion.h2
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className="text-3xl font-light text-gray-800 mb-12 text-center"
@@ -56,7 +56,7 @@ function MeditationPlayer({ meditation, onBack }) {
         <CircularTimer currentTime={currentTime} totalTime={totalTime} />
 
         <div className="flex gap-4 mt-12">
-          <motion.button /* ← AQUÍ USA motion */
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handlePlayPause}
@@ -65,7 +65,7 @@ function MeditationPlayer({ meditation, onBack }) {
             {isPlaying ? "⏸ Pausar" : "▶ Reproducir"}
           </motion.button>
 
-          <motion.button /* ← AQUÍ USA motion */
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleStop}
@@ -75,7 +75,7 @@ function MeditationPlayer({ meditation, onBack }) {
           </motion.button>
         </div>
 
-        <motion.button /* ← AQUÍ USA motion */
+        <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={onBack}

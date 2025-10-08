@@ -1,0 +1,28 @@
+{
+  "meditations": [
+    {
+      "id": 1,
+      "name": "Respiración Consciente",
+      "duration": 5,
+      "audioFileName": "meditation-5min.mp3"
+    },
+    {
+      "id": 2,
+      "name": "Calma Interior",
+      "duration": 7,
+      "audioFileName": "meditation-7min.mp3"
+    },
+    {
+      "id": 3,
+      "name": "Paz Profunda",
+      "duration": 10,
+      "audioFileName": "meditation-10min.mp3"
+    },
+    {
+      "id": 4,
+      "name": "Calma Total",
+      "duration": 5,
+      "audioFileName": "meditation-4min.mp3"
+    }
+  ]
+}

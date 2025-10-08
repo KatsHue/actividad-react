@@ -1,9 +1,19 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { meditations } from "../data/meditations";
+import { getMeditationsList } from "../services/apiService";
 
 function Home({ onSelectMeditation, lastMeditation }) {
+  const [meditations, setMeditations] = useState([]);
+
+  useEffect(() => {
+    const fetchMeditations = async () => {
+      const list = await getMeditationsList();
+      setMeditations(list);
+    };
+    fetchMeditations();
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
