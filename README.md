@@ -1,16 +1,54 @@
-# React + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h2 align="center">satori - app de meditación</h2>
 
-Currently, two official plugins are available:
+Satori es una aplicación minimalista de meditación desarrollada con **React + Vite + TailwindCSS + Framer Motion**.  
+Incluye una lista de meditaciones guiadas, un temporizador circular y un fondo animado relajante.
+<br><br> Clase: <strong>Programación para Internet 2025B<strong>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+</div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades ✨
 
-## Expanding the ESLint configuration
+- Lista de meditaciones con nombre y duración.
+- Reproductor con play, pausa y detener.
+- Temporizador circular con progreso visual.
+- Muestra la última meditación escuchada.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Instalación y uso
+
+### Clona el repositorio
+
+```sh
+git clone https://github.com/tu-usuario/satori-app.git
+```
+
+### Entra a la carpeta del proyecto
+
+```sh
+cd satori-app
+```
+
+### Instala dependencias
+```sh
+npm install
+```
+
+### Corre el servidor de desarrollo
+
+```sh
+npm run dev
+```
+
+### Inicia el servidor JSON (para cargar las meditaciones)
+
+```sh
+npx json-server --watch db.json --port 5000
+```
+
+## Capturas
+
+<img width="1356" height="648" alt="image" src="https://github.com/user-attachments/assets/decb189e-4fe2-4591-bcac-f2ff41297dab" />
+<img width="1351" height="644" alt="image" src="https://github.com/user-attachments/assets/4c80d301-5e83-4895-8832-7e96ea08d100" />
+
