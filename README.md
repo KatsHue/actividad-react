@@ -27,7 +27,7 @@ git clone https://github.com/KatsHue/actividad-react.git
 ### Entra a la carpeta del proyecto
 
 ```sh
-cd satori-app
+cd actividad-react
 ```
 
 ### Instala dependencias
