@@ -26,7 +26,7 @@ function CircularTimer({ currentTime, totalTime }) {
           cx="96"
           cy="96"
           r={radius}
-          stroke="rgba(168, 197, 228, 0.8)"
+          stroke="rgba(247, 238, 238, 0.86)"
           strokeWidth="8"
           fill="none"
           strokeDasharray={circumference}

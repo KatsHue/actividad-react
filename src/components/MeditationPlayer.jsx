@@ -4,13 +4,18 @@ import { motion } from "framer-motion";
 import BreathingAnimation from "./BreathingAnimation";
 import CircularTimer from "./CircularTimer";
 import { storage } from "../utils/storage";
-/* eslint-disable no-unused-vars */
 
 function MeditationPlayer({ meditation, onBack }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const audioRef = useRef(null);
   const totalTime = meditation.duration * 60;
+
+  useEffect(() => {
+    if (meditation && audioRef.current) {
+      audioRef.current.src = `/meditations/${meditation.audioFileName}`;
+    }
+  }, [meditation]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,31 +25,65 @@ function MeditationPlayer({ meditation, onBack }) {
         handleStop();
       }
     }, 1000);
-
     return () => clearInterval(interval);
   }, [isPlaying, currentTime, totalTime]);
 
   const handlePlayPause = () => {
+    if (!isPlaying) audioRef.current.play();
+    else audioRef.current.pause();
     setIsPlaying(!isPlaying);
   };
 
   const handleStop = () => {
     setIsPlaying(false);
     setCurrentTime(0);
+    audioRef.current.pause();
+    audioRef.current.currentTime = 0;
     storage.setLastMeditation(meditation);
     onBack();
   };
+
+  const bubbles = Array.from({ length: 12 }, (_, i) => ({
+    size: Math.random() * 50 + 20,
+    left: Math.random() * 100 + "%",
+    delay: Math.random() * 20,
+    duration: Math.random() * 20 + 15,
+    color: ["#c3f0d9", "#a8c5e4", "#f0d8b4", "#d8b4ff"][
+      Math.floor(Math.random() * 4)
+    ],
+    xMove: Math.random() * 40 - 20, // movimiento horizontal
+  }));
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen relative bg-gradient-to-br from-satori-beige via-satori-lavender/20 to-satori-blue/30"
+      className="min-h-screen relative overflow-hidden"
     >
+      <div className="meditation-bg-zen" />
+
+      {bubbles.map((bubble, idx) => (
+        <div
+          key={idx}
+          className="bubble-zen"
+          style={{
+            width: bubble.size,
+            height: bubble.size,
+            left: bubble.left,
+            backgroundColor: bubble.color,
+            animationDelay: `${bubble.delay}s`,
+            animationDuration: `${bubble.duration}s`,
+            transform: `translateX(0px)`,
+          }}
+        />
+      ))}
+
       <BreathingAnimation isPlaying={isPlaying} />
 
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-8">
+        <audio ref={audioRef} />
+
         <motion.h2
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
