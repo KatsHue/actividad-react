@@ -5,10 +5,12 @@
 Satori es una aplicación minimalista de meditación desarrollada con **React + Vite + TailwindCSS + Framer Motion**.  
 Incluye una lista de meditaciones guiadas, un temporizador circular y un fondo animado relajante.
 
-## Demo 💻
+### Demo 💻
 
 > ⚠️ Nota: Primero asegúrate de levantar el servidor para ver las meditaciones:
+<br>
 <a href="https://satori-api-dngv.onrender.com/" target="_blank"><strong>💻 Servidor </strong></a>
+<br>
 <a href="https://satori-app.onrender.com/" target="_blank"><strong>🌸 Demo Satori </strong></a>
 
 
